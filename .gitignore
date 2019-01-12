@@ -1,0 +1,21 @@
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules/
+# bower_components/
+# build/
+# .tmp/
+# report/
+npm-debug.log
+
+# other
+# .tmp
+# .idea/
+# "Icon\r"
+# Icon?
+# newrelic_agent.log
+# .tresorit/
+# yarn.lock
+package-lock.json
+# .DS_Store
+# *.log
+# sessions/
