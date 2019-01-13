@@ -8,6 +8,8 @@ import {
 } from '../actions'
 import Picker from '../components/Picker'
 import Posts from '../components/Posts'
+import Refresh from '@material-ui/icons/Refresh'
+import Button from '@material-ui/core/Button';
 
 class AsyncApp extends Component {
   constructor(props) {
@@ -45,19 +47,19 @@ class AsyncApp extends Component {
     const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
     return (
       <div>
-        <Picker
+        &nbsp;&nbsp;&nbsp;&nbsp;<Picker
           value={selectedSubreddit}
           onChange={this.handleChange}
           options={['alternativeart', 'pics', 'gifs', 'adviceanimals', 'cats', 'images', 'photoshopbattles', 'hmmm', 'all', 'aww']}
         />
         <p>
+          {!isFetching && (
+            <Button onClick={this.handleRefreshClick}><Refresh /></Button>
+          )}
           {lastUpdated && (
             <span>
               Last updated at {new Date(lastUpdated).toLocaleTimeString()}.{' '}
             </span>
-          )}
-          {!isFetching && (
-            <button onClick={this.handleRefreshClick}>Refresh</button>
           )}
         </p>
         {isFetching && posts.length === 0 && <h2>Loading...</h2>}
