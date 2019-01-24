@@ -60,7 +60,7 @@ class Posts extends Component {
     return (
       <div>
       {this.props.posts.map((post, i) => (
-        <Card className={classes.card}>
+        <Card className={classes.card} key={i}>
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
